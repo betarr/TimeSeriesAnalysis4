@@ -1,5 +1,7 @@
 package graphpanel;
 
+import graphpanel.listeners.GraphPanelListener;
+
 import java.awt.Color;
 import java.awt.GradientPaint;
 import java.awt.Graphics;
@@ -11,7 +13,6 @@ import java.util.Calendar;
 import java.util.List;
 
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
 import javax.swing.SwingUtilities;
 
 import datatypes.TimeSerie;
@@ -27,16 +28,13 @@ public class GraphPanel extends JPanel implements GraphPanelInterface {
 	private PointConverter converter;
 	private java.awt.Dimension preferredSize = new java.awt.Dimension(0, 0);
 	
-	public int px = 0;
-	private int py = 0;
-	
-	
 	public GraphPanel() {
 		this.timeSeriesConfigs = new ArrayList<TimeSerieConfig>();
 		this.converter = new PointConverter();
-//		this.addMouseWheelListener(this);
-//		this.addMouseListener(this);
-//		this.addMouseMotionListener(this);
+		GraphPanelListener listener = new GraphPanelListener(this);
+		this.addMouseWheelListener(listener);
+		this.addMouseListener(listener);
+		this.addMouseMotionListener(listener);
 		
 	}
 	
@@ -212,88 +210,6 @@ public class GraphPanel extends JPanel implements GraphPanelInterface {
 	public java.awt.Dimension getPreferredSize() {
 		return this.preferredSize;
 	}
-//
-//	@Override
-//	public void mouseDragged(MouseEvent e) {
-//		System.out.println(px + ", " + py);
-//		java.awt.Point point = e.getPoint();
-//		int diffX = point.x - this.px;
-//		int diffY = point.y - this.py;
-//		System.out.println("diff: " + diffX + ", " + diffY);
-//		java.awt.Point oldLocation = getLocation();
-//		java.awt.Point newLocation = new java.awt.Point(oldLocation.x+diffX, oldLocation.y+diffY);
-//		if (this.canMoveGraph(newLocation)) {
-//			setLocation(newLocation);
-//			this.px = point.x;
-//			this.py = point.y;
-//		}
-//	}
-//	
-//	private boolean canMoveGraph(java.awt.Point newLocation) {
-//		Rectangle graphPosition = SwingUtilities.calculateInnerArea(this, new Rectangle());
-//		java.awt.Point rightDownPoint = new java.awt.Point(graphPosition.x+graphPosition.width, graphPosition.y+graphPosition.height);
-//		java.awt.Dimension viewScreen = this.getParent().getSize();
-//		java.awt.Point lastAvailablePoint = new java.awt.Point((int)viewScreen.getWidth(), (int)viewScreen.getHeight());
-//		
-//		return (newLocation.x <= 0 && newLocation.y <= 0) && (lastAvailablePoint.x < rightDownPoint.x && lastAvailablePoint.y < rightDownPoint.y);
-//	}
-//
-//	@Override
-//	public void mouseMoved(MouseEvent e) {
-//		// TODO Auto-generated method stub
-//		
-//	}
-//
-//	@Override
-//	public void mouseClicked(MouseEvent e) {
-//		// TODO Auto-generated method stub
-//		
-//	}
-//
-//	@Override
-//	public void mouseEntered(MouseEvent e) {
-//		// TODO Auto-generated method stub
-//		
-//	}
-//
-//	@Override
-//	public void mouseExited(MouseEvent e) {
-//		// TODO Auto-generated method stub
-//		
-//	}
-//
-//	@Override
-//	public void mousePressed(MouseEvent e) {
-//		this.px = e.getPoint().x;
-//		this.py = e.getPoint().y;
-//		System.out.println(px + ", " + py);
-//	}
-//
-//	@Override
-//	public void mouseReleased(MouseEvent e) {
-//		// TODO Auto-generated method stub
-//		
-//	}
-//
-//	@Override
-//	public void mouseWheelMoved(MouseWheelEvent e) {
-//		int mouseRotation = e.getWheelRotation();
-//			if (mouseRotation != 0) {
-//			java.awt.Point point = e.getPoint();
-//			double d = (double) mouseRotation * 1.2;
-//			d = (mouseRotation > 0) ? 1 / d : -d;
-//	
-//			int w = (int) (getWidth() * d);
-//			int h = (int) (getHeight() * d);
-//			this.preferredSize.setSize(w, h);
-//	
-//			int offX = (int) (point.x * d) - point.x;
-//			int offY = (int) (point.y * d) - point.y;
-//			setLocation(getLocation().x - offX, getLocation().y - offY);
-//	
-//			getParent().doLayout();
-//		}
-//	}
 
 	@Override
 	public List<String> getTimeSeriesNames() {
