@@ -65,7 +65,7 @@ public abstract class Dialog extends JDialog {
 			this.mainPanel.add(this.controlPanel, BorderLayout.SOUTH);
 		}
 		
-		this.add(this.mainPanel);
+		this.contentPanel.add(this.mainPanel);
 		
 		this.setModalityType(ModalityType.APPLICATION_MODAL);
 		this.setLocationRelativeTo(owner);
@@ -76,6 +76,14 @@ public abstract class Dialog extends JDialog {
 	protected abstract JPanel buildContentPanel();
 	
 	protected abstract JPanel buildControlPanel();
+	
+	protected void swapPanels() {
+		this.mainPanel.removeAll();
+		this.mainPanel.add(this.labelPanel, BorderLayout.NORTH);
+		this.mainPanel.add(this.contentPanel, BorderLayout.CENTER);
+		this.mainPanel.add(this.controlPanel, BorderLayout.SOUTH);
+		this.mainPanel.validate();
+	}
 	
 	protected JButton buildJButton(JButton jButton, String label, ActionListener listener) {
 		jButton = new JButton(label);

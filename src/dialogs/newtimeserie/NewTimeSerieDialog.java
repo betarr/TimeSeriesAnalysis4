@@ -1,61 +1,57 @@
 package dialogs.newtimeserie;
 
+import java.awt.Color;
+import java.awt.Component;
 import java.awt.FlowLayout;
-import java.awt.GridLayout;
 
-import javax.swing.JButton;
-import javax.swing.JLabel;
+import javax.swing.JDialog;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import dialogs.Dialog;
-
-public class NewTimeSerieDialog extends Dialog {
+public class NewTimeSerieDialog extends JDialog {
+	private static final long serialVersionUID = 1L;
 	
-	private JPanel contentPanel;
+	private Component owner;
 	
-	private JButton fromFunctionButton;
-	private JButton fromExistingButton;
-	private JButton fromRandomButton;
+	private JPanel mainPanel;
 	
-	private int spaceBetweenButtons = 15;
+	private JPanel chooseTypePanel = new ChooseTypePanel(this);
+	private JPanel fromExistingPanel;
+	private JPanel fromFunctionPanel;
+	private JPanel fromRandomPanel = new FromRandomPanel(this);
 	
-	public NewTimeSerieDialog() {
-		super(DialogsNewTimeSerieConfig.DIALOG_LABEL, DialogsNewTimeSerieConfig.DIALOGS_SIZE);
-		this.setInnerMargin(25);
-	}
+	private int innerMargin = 0;
 	
-	@Override
-	protected JPanel buildLabelPanel() {
-		JPanel labelPanel = new JPanel();
-		labelPanel.setLayout(new FlowLayout());
-		JLabel instructionLabel = new JLabel(DialogsNewTimeSerieConfig.INSTRUCTION);
-		labelPanel.add(instructionLabel);
-		return labelPanel;
-	}
-
-	@Override
-	protected JPanel buildContentPanel() {
-		this.contentPanel = new JPanel();
-		this.contentPanel.setBorder(new EmptyBorder(
-				this.spaceBetweenButtons, 
-				this.spaceBetweenButtons,
-				this.spaceBetweenButtons,
-				this.spaceBetweenButtons));
-		this.contentPanel.setLayout(new GridLayout(1, 3, this.spaceBetweenButtons, this.spaceBetweenButtons));
+	public NewTimeSerieDialog(Component owner) {
+		this.owner = owner;
+		this.setTitle(NewTimeSerieDialogsConfig.DIALOG_LABEL);
+		this.setSize(NewTimeSerieDialogsConfig.DIALOGS_SIZE);
 		
-		this.initButtons();
-		return this.contentPanel;
-	}
-	
-	@Override
-	protected JPanel buildControlPanel() {
-		return null;
+		this.setModalityType(ModalityType.APPLICATION_MODAL);
+		this.setLocationRelativeTo(this.owner);
+		
+		this.buildContent();
 	}
 
-	private void initButtons() {
-		this.contentPanel.add(this.buildJButton(this.fromFunctionButton, DialogsNewTimeSerieConfig.FROM_FUNCTION_BUTTON_LABEL, null));
-		this.contentPanel.add(this.buildJButton(this.fromExistingButton, DialogsNewTimeSerieConfig.FROM_EXISTING_BUTTON_LABEL, null));
-		this.contentPanel.add(this.buildJButton(this.fromRandomButton, DialogsNewTimeSerieConfig.FROM_RANDOM_BUTTON_LABEL, null));
+	private void buildContent() {
+		this.mainPanel = new JPanel();
+		this.mainPanel.setBackground(Color.RED);
+		this.mainPanel.setLayout(new FlowLayout());
+		this.mainPanel.setBorder(new EmptyBorder(this.innerMargin,
+				this.innerMargin, this.innerMargin, this.innerMargin));
+		this.mainPanel.add(this.chooseTypePanel);
+		this.getContentPane().add(this.mainPanel);
 	}
+	
+	private void swapToPanel(JPanel panel) {
+		this.mainPanel.removeAll();
+		this.mainPanel.add(panel);
+		this.mainPanel.validate();
+	}
+	
+	public void swapToFromRandomPanel() {
+		this.swapToPanel(this.fromRandomPanel);
+	}
+
+
 }

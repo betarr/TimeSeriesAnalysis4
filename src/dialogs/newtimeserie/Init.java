@@ -21,14 +21,11 @@ public class Init {
 		this.frame.setPreferredSize(new Dimension(640, 480));
 		this.frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		NewTimeSerieDialog dialog = new NewTimeSerieDialog();
-		dialog.buildDialog(this.frame);
-		dialog.setVisible(true);
-		
-		
-		
 		this.frame.pack();
 		this.frame.setLocationRelativeTo(null);
 		this.frame.setVisible(true);
+		
+		NewTimeSerieDialog dialog = new NewTimeSerieDialog(this.frame);
+		dialog.setVisible(true);
 	}
 }

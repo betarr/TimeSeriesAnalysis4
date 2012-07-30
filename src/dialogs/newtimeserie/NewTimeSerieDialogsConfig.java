@@ -2,7 +2,7 @@ package dialogs.newtimeserie;
 
 import java.awt.Dimension;
 
-public class DialogsNewTimeSerieConfig {
+public class NewTimeSerieDialogsConfig {
 
 	public static final Dimension DIALOGS_SIZE = new Dimension(480, 360);
 	
