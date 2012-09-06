@@ -29,4 +29,9 @@ public enum GenerateFunction {
 		}
 		return result;
 	}
+	
+	@Override
+	public String toString() {
+		return this.name;
+	}
 }

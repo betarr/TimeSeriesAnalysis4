@@ -93,6 +93,4 @@ public class NewTimeSerieDialog extends JDialog {
 	public Component getOwnerOfDialog() {
 		return owner;
 	}
-
-
 }
