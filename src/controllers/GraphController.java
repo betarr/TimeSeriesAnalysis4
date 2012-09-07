@@ -63,6 +63,7 @@ public class GraphController {
 					timeSerie.addPoint(new Point(x++, Double.valueOf(fileLine)));
 				}
 			}
+			scanner.close();
 			System.out.println(timeSerie);
 			this.graphPanel.addTimeSerie(config.getTimeSerieName(), timeSerie, config.getColor());
 		} catch (FileNotFoundException e) {

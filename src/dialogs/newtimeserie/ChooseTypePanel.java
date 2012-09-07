@@ -12,8 +12,6 @@ import javax.swing.JPanel;
 import dialogs.DialogsConfig;
 
 public class ChooseTypePanel extends NewTimeSerieDialogPanels {
-	private static final long serialVersionUID = 1L;
-	
 	private NewTimeSerieDialog parent;
 	
 	private int spaceBetweenButtons = 15;

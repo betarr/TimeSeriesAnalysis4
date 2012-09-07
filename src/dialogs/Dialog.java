@@ -14,6 +14,7 @@ import javax.swing.border.EmptyBorder;
 
 
 public abstract class Dialog extends JDialog {
+	private static final long serialVersionUID = 1L;
 	
 	private String dialogTitle = "";
 	private Dimension dialogSize = new Dimension(0, 0);

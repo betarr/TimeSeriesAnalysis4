@@ -72,6 +72,7 @@ public class GraphPanel extends JPanel implements GraphPanelInterface {
 	
 	private void resetConverter() {
 		if (this.timeSeriesConfigs != null && !this.timeSeriesConfigs.isEmpty()) {
+			System.out.println("Time Serie Range: " + this.findBiggestTimeSerieRange() );
 			this.converter.setPanelSize(new Dimension(this.getWidth(), this.getHeight()));
 			this.converter.setTimeSerieSize(this.findBiggestTimeSerieAreaSize());
 			this.converter.setTimeSerieRange(this.findBiggestTimeSerieRange());
@@ -100,6 +101,13 @@ public class GraphPanel extends JPanel implements GraphPanelInterface {
 	private TimeSerieRange findBiggestTimeSerieRange() {
 		if (this.timeSeriesConfigs != null) {
 			TimeSerieRange result = new TimeSerieRange();
+			if (this.timeSeriesConfigs.size() >= 1) {
+				TimeSerieRange tscRange = this.timeSeriesConfigs.get(0).getTimeSerie().getRange();
+				result.setMinX(tscRange.getMinX());
+				result.setMaxX(tscRange.getMaxX());
+				result.setMinY(tscRange.getMinY());
+				result.setMaxY(tscRange.getMaxY());
+			}
 			for (TimeSerieConfig tsc : this.timeSeriesConfigs) {
 				TimeSerieRange tscRange = tsc.getTimeSerie().getRange();
 				if (tscRange.getMinX() < result.getMinX()) {

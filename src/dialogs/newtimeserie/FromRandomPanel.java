@@ -19,8 +19,6 @@ import utils.Validation;
 import dialogs.DialogsConfig;
 
 public class FromRandomPanel extends NewTimeSerieDialogPanels {
-	private static final long serialVersionUID = 1L;
-	
 	private NewTimeSerieDialog parent;
 	
 	private int spaceBetweenFields = 10;

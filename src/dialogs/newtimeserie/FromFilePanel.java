@@ -20,8 +20,6 @@ import controllers.ControllerService;
 import dialogs.DialogsConfig;
 
 public class FromFilePanel extends NewTimeSerieDialogPanels {
-	private static final long serialVersionUID = 1L;
-
 	private NewTimeSerieDialog parent;
 
 	private int spaceBetweenFields = 10;

@@ -31,9 +31,11 @@ public class GUI {
 		this.appFrame.setPreferredSize(GUI.appSize);
 		
 		this.addGraphPanel();
-		this.addTimeSerieToGraphPanel("test", this.generateTimeSerie(20, -5, -5, 5), Color.GREEN);
+//		this.addTimeSerieToGraphPanel("test", this.generateTimeSerie(20, -5, -5, 5), Color.GREEN);
 //		this.addTimeSerieToGraphPanel("test", this.generateTimeSerie(30, -10, -7, 7), Color.RED);
 //		this.addTimeSerieToGraphPanel("test", this.generateTimeSerie(15, -15, -10, 10), Color.BLUE);
+		
+		this.addTimeSerieToGraphPanel("test", this.generateSinTimeSerie(5, 15, 0.1), Color.RED);
 		
 		this.appFrame.pack();
 		this.appFrame.setLocationRelativeTo(null);
@@ -60,6 +62,17 @@ public class GUI {
 			int y = r.nextInt(maxY - minY);
 			y += minY;
 			p.setY(y);
+			result.addPoint(p);
+		}
+		return result;
+	}
+	
+	public TimeSerie generateSinTimeSerie(double startX, double endX, double iterationStep) {
+		TimeSerie result = new TimeSerie();
+		for (double x = startX; x <= endX; x += iterationStep) {
+			Point p = new Point();
+			p.setX(x);
+			p.setY(Math.sin(x));
 			result.addPoint(p);
 		}
 		return result;
