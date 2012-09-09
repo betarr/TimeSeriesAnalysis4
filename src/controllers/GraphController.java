@@ -4,6 +4,7 @@ import graphpanel.GraphPanel;
 import graphpanel.Point;
 
 import java.io.FileNotFoundException;
+import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -34,7 +35,6 @@ public class GraphController {
 			p.setY(y);
 			timeSerie.addPoint(p);
 		}
-		System.out.println(timeSerie);
 		this.graphPanel.addTimeSerie(config.getTimeSerieName(), timeSerie, config.getColor());
 	}
 	
@@ -48,7 +48,6 @@ public class GraphController {
 			p.setY(y);
 			timeSerie.addPoint(p);
 		}
-		System.out.println(timeSerie);
 		this.graphPanel.addTimeSerie(config.getTimeSerieName(), timeSerie, config.getColor());
 	}
 
@@ -64,10 +63,19 @@ public class GraphController {
 				}
 			}
 			scanner.close();
-			System.out.println(timeSerie);
 			this.graphPanel.addTimeSerie(config.getTimeSerieName(), timeSerie, config.getColor());
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
+		}
+	}
+
+	public List<String> getTimeSeriesNames() {
+		return this.graphPanel.getTimeSeriesNames();
+	}
+
+	public void removeTimeSeries(List<String> names) {
+		if (names != null) {
+			this.graphPanel.removeTimeSeries(names);
 		}
 	}
 }

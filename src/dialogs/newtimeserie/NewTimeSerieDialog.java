@@ -26,8 +26,8 @@ public class NewTimeSerieDialog extends JDialog {
 	
 	public NewTimeSerieDialog(Component owner) {
 		this.owner = owner;
-		this.setTitle(NewTimeSerieDialogsConfig.DIALOG_LABEL);
-		this.setSize(NewTimeSerieDialogsConfig.DIALOGS_SIZE);
+		this.setTitle(NewTimeSerieDialogConfig.DIALOG_LABEL);
+		this.setSize(NewTimeSerieDialogConfig.DIALOGS_SIZE);
 		
 		this.setModalityType(ModalityType.APPLICATION_MODAL);
 		this.setLocationRelativeTo(this.owner);
@@ -37,7 +37,6 @@ public class NewTimeSerieDialog extends JDialog {
 
 	private void buildContent() {
 		this.mainPanel = new JPanel();
-		this.mainPanel.setBackground(Color.RED);
 		this.mainPanel.setLayout(new BorderLayout());
 		this.mainPanel.setBorder(new EmptyBorder(this.innerMargin,
 				this.innerMargin, this.innerMargin, this.innerMargin));

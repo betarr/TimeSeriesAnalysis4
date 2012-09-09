@@ -26,7 +26,7 @@ public class FromRandomPanel extends NewTimeSerieDialogPanels {
 	private JTextField timeSerieNameTextField = new JTextField();
 	private JPanel timeSerieColorPanel;
 	private JButton timeSerieColorButton;
-	private Color timeSerieColor = NewTimeSerieDialogsConfig.TIME_SERIE_DEFAULT_COLOR;
+	private Color timeSerieColor = NewTimeSerieDialogConfig.TIME_SERIE_DEFAULT_COLOR;
 	private JTextField startXTextField = new JTextField();
 	private JTextField endXTextField = new JTextField();
 	private JTextField minYTextField = new JTextField();
@@ -43,7 +43,7 @@ public class FromRandomPanel extends NewTimeSerieDialogPanels {
 	private JPanel buildLabelPanel() {
 		JPanel labelPanel = new JPanel();
 		labelPanel.setLayout(new FlowLayout());
-		labelPanel.add(new JLabel(NewTimeSerieDialogsConfig.FROM_RANDOM_LABEL));
+		labelPanel.add(new JLabel(NewTimeSerieDialogConfig.FROM_RANDOM_LABEL));
 		return labelPanel;
 	}
 
@@ -52,20 +52,20 @@ public class FromRandomPanel extends NewTimeSerieDialogPanels {
 		this.setMarginToPanel(contentPanel, this.spaceBetweenFields);
 		contentPanel.setLayout(new GridLayout(7, 2, this.spaceBetweenFields, this.spaceBetweenFields));
 		
-		contentPanel.add(new JLabel(NewTimeSerieDialogsConfig.RANDOM_NAME_LABEL));
+		contentPanel.add(new JLabel(NewTimeSerieDialogConfig.RANDOM_NAME_LABEL));
 		contentPanel.add(this.timeSerieNameTextField);
 		
 		contentPanel.add(new JLabel(
-				NewTimeSerieDialogsConfig.RANDOM_COLOR_LABEL));
+				NewTimeSerieDialogConfig.RANDOM_COLOR_LABEL));
 		this.timeSerieColorPanel = new JPanel();
-		this.timeSerieColorPanel.setBackground(NewTimeSerieDialogsConfig.TIME_SERIE_DEFAULT_COLOR);
-		this.timeSerieColorButton = new JButton(NewTimeSerieDialogsConfig.COLOR_CHOOSER_BUTTON_LABEL);
+		this.timeSerieColorPanel.setBackground(NewTimeSerieDialogConfig.TIME_SERIE_DEFAULT_COLOR);
+		this.timeSerieColorButton = new JButton(NewTimeSerieDialogConfig.COLOR_CHOOSER_BUTTON_LABEL);
 		this.timeSerieColorButton.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				Color color = JColorChooser.showDialog(contentPanel,
-						NewTimeSerieDialogsConfig.COLOR_CHOOSER_DIALOG_LABEL,
-						NewTimeSerieDialogsConfig.TIME_SERIE_DEFAULT_COLOR);
+						NewTimeSerieDialogConfig.COLOR_CHOOSER_DIALOG_LABEL,
+						NewTimeSerieDialogConfig.TIME_SERIE_DEFAULT_COLOR);
 				if (color != null) {
 					timeSerieColorPanel.setBackground(color);
 					timeSerieColor = color;
@@ -77,19 +77,19 @@ public class FromRandomPanel extends NewTimeSerieDialogPanels {
 		colorChoosePanel.add(this.timeSerieColorButton);
 		contentPanel.add(colorChoosePanel);
 		
-		contentPanel.add(new JLabel(NewTimeSerieDialogsConfig.RANDOM_START_X_LABEL));
+		contentPanel.add(new JLabel(NewTimeSerieDialogConfig.RANDOM_START_X_LABEL));
 		contentPanel.add(this.startXTextField);
 		
-		contentPanel.add(new JLabel(NewTimeSerieDialogsConfig.RANDOM_END_X_LABEL));
+		contentPanel.add(new JLabel(NewTimeSerieDialogConfig.RANDOM_END_X_LABEL));
 		contentPanel.add(this.endXTextField);
 		
-		contentPanel.add(new JLabel(NewTimeSerieDialogsConfig.RANDOM_MIN_Y_LABEL));
+		contentPanel.add(new JLabel(NewTimeSerieDialogConfig.RANDOM_MIN_Y_LABEL));
 		contentPanel.add(this.minYTextField);
 		
-		contentPanel.add(new JLabel(NewTimeSerieDialogsConfig.RANDOM_MAX_Y_LABEL));
+		contentPanel.add(new JLabel(NewTimeSerieDialogConfig.RANDOM_MAX_Y_LABEL));
 		contentPanel.add(this.maxYTextField);
 		
-		contentPanel.add(new JLabel(NewTimeSerieDialogsConfig.RANDOM_ITERATION_STEP_LABEL));
+		contentPanel.add(new JLabel(NewTimeSerieDialogConfig.RANDOM_ITERATION_STEP_LABEL));
 		contentPanel.add(this.iterationStepTextField);
 		
 		this.rightBorder = this.timeSerieNameTextField.getBorder();

@@ -12,4 +12,6 @@ public interface GraphPanelInterface {
 	public boolean addTimeSerie(String name, TimeSerie timeSerie);
 	public boolean addTimeSerie(String name, TimeSerie timeSerie, Color color);
 	public boolean isTimeSerieWithName(String name);
+	public void removeTimeSerie(String name);
+	public void removeTimeSeries(List<String> names);
 }

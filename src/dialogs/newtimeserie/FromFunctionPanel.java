@@ -29,7 +29,7 @@ public class FromFunctionPanel extends NewTimeSerieDialogPanels {
 	private JTextField timeSerieNameTextField = new JTextField();
 	private JPanel timeSerieColorPanel;
 	private JButton timeSerieColorButton;
-	private Color timeSerieColor = NewTimeSerieDialogsConfig.TIME_SERIE_DEFAULT_COLOR;
+	private Color timeSerieColor = NewTimeSerieDialogConfig.TIME_SERIE_DEFAULT_COLOR;
 	private JComboBox<GenerateFunction> functionComboBox;
 	private JTextField startXTextField = new JTextField();
 	private JTextField endXTextField = new JTextField();
@@ -47,7 +47,7 @@ public class FromFunctionPanel extends NewTimeSerieDialogPanels {
 	private JPanel buildLabelPanel() {
 		JPanel labelPanel = new JPanel();
 		labelPanel.setLayout(new FlowLayout());
-		labelPanel.add(new JLabel(NewTimeSerieDialogsConfig.FROM_FUNCTION_LABEL));
+		labelPanel.add(new JLabel(NewTimeSerieDialogConfig.FROM_FUNCTION_LABEL));
 		return labelPanel;
 	}
 
@@ -56,20 +56,20 @@ public class FromFunctionPanel extends NewTimeSerieDialogPanels {
 		this.setMarginToPanel(contentPanel, this.spaceBetweenFields);
 		contentPanel.setLayout(new GridLayout(8, 2, this.spaceBetweenFields, this.spaceBetweenFields));
 		
-		contentPanel.add(new JLabel(NewTimeSerieDialogsConfig.FUNCTION_NAME_LABEL));
+		contentPanel.add(new JLabel(NewTimeSerieDialogConfig.FUNCTION_NAME_LABEL));
 		contentPanel.add(this.timeSerieNameTextField);
 		
 		contentPanel.add(new JLabel(
-				NewTimeSerieDialogsConfig.FUNCTION_COLOR_LABEL));
+				NewTimeSerieDialogConfig.FUNCTION_COLOR_LABEL));
 		this.timeSerieColorPanel = new JPanel();
-		this.timeSerieColorPanel.setBackground(NewTimeSerieDialogsConfig.TIME_SERIE_DEFAULT_COLOR);
-		this.timeSerieColorButton = new JButton(NewTimeSerieDialogsConfig.COLOR_CHOOSER_BUTTON_LABEL);
+		this.timeSerieColorPanel.setBackground(NewTimeSerieDialogConfig.TIME_SERIE_DEFAULT_COLOR);
+		this.timeSerieColorButton = new JButton(NewTimeSerieDialogConfig.COLOR_CHOOSER_BUTTON_LABEL);
 		this.timeSerieColorButton.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				Color color = JColorChooser.showDialog(contentPanel,
-						NewTimeSerieDialogsConfig.COLOR_CHOOSER_DIALOG_LABEL,
-						NewTimeSerieDialogsConfig.TIME_SERIE_DEFAULT_COLOR);
+						NewTimeSerieDialogConfig.COLOR_CHOOSER_DIALOG_LABEL,
+						NewTimeSerieDialogConfig.TIME_SERIE_DEFAULT_COLOR);
 				if (color != null) {
 					timeSerieColorPanel.setBackground(color);
 					timeSerieColor = color;
@@ -81,20 +81,20 @@ public class FromFunctionPanel extends NewTimeSerieDialogPanels {
 		colorChoosePanel.add(this.timeSerieColorButton);
 		contentPanel.add(colorChoosePanel);
 		
-		contentPanel.add(new JLabel(NewTimeSerieDialogsConfig.FUNCTION_FUNCTION_LABEL));
+		contentPanel.add(new JLabel(NewTimeSerieDialogConfig.FUNCTION_FUNCTION_LABEL));
 		this.buildJComboBoxWithFunctionNames();
 		contentPanel.add(this.functionComboBox);
 		
-		contentPanel.add(new JLabel(NewTimeSerieDialogsConfig.FUNCTION_START_X_LABEL));
+		contentPanel.add(new JLabel(NewTimeSerieDialogConfig.FUNCTION_START_X_LABEL));
 		contentPanel.add(this.startXTextField);
 		
-		contentPanel.add(new JLabel(NewTimeSerieDialogsConfig.FUNCTION_END_X_LABEL));
+		contentPanel.add(new JLabel(NewTimeSerieDialogConfig.FUNCTION_END_X_LABEL));
 		contentPanel.add(this.endXTextField);
 		
-		contentPanel.add(new JLabel(NewTimeSerieDialogsConfig.FUNCTION_ITERATION_STEP_LABEL));
+		contentPanel.add(new JLabel(NewTimeSerieDialogConfig.FUNCTION_ITERATION_STEP_LABEL));
 		contentPanel.add(this.iterationStepTextField);
 		
-		contentPanel.add(new JLabel(NewTimeSerieDialogsConfig.FUNCTION_USE_NOISE_LABEL));
+		contentPanel.add(new JLabel(NewTimeSerieDialogConfig.FUNCTION_USE_NOISE_LABEL));
 		contentPanel.add(this.useNoiseCheckBox);
 		this.useNoiseCheckBox.addItemListener(new ItemListener() {
 			@Override
@@ -103,7 +103,7 @@ public class FromFunctionPanel extends NewTimeSerieDialogPanels {
 			}
 		});
 		
-		contentPanel.add(new JLabel(NewTimeSerieDialogsConfig.FUNCTION_NOISE_LABEL));
+		contentPanel.add(new JLabel(NewTimeSerieDialogConfig.FUNCTION_NOISE_LABEL));
 		this.noiseTextField.setEnabled(false);
 		contentPanel.add(this.noiseTextField);
 		

@@ -72,7 +72,6 @@ public class GraphPanel extends JPanel implements GraphPanelInterface {
 	
 	private void resetConverter() {
 		if (this.timeSeriesConfigs != null && !this.timeSeriesConfigs.isEmpty()) {
-			System.out.println("Time Serie Range: " + this.findBiggestTimeSerieRange() );
 			this.converter.setPanelSize(new Dimension(this.getWidth(), this.getHeight()));
 			this.converter.setTimeSerieSize(this.findBiggestTimeSerieAreaSize());
 			this.converter.setTimeSerieRange(this.findBiggestTimeSerieRange());
@@ -218,6 +217,15 @@ public class GraphPanel extends JPanel implements GraphPanelInterface {
 	public java.awt.Dimension getPreferredSize() {
 		return this.preferredSize;
 	}
+	
+	private TimeSerieConfig getTimeSerieConfigByName(String name) {
+		for (TimeSerieConfig tsc : this.timeSeriesConfigs) {
+			if (tsc.getName().equals(name)) {
+				return tsc;
+			}
+		}
+		return null;
+	}
 
 	@Override
 	public List<String> getTimeSeriesNames() {
@@ -261,5 +269,23 @@ public class GraphPanel extends JPanel implements GraphPanelInterface {
 			}
 		}
 		return false;
+	}
+
+	@Override
+	public void removeTimeSerie(String name) {
+		TimeSerieConfig tsc = this.getTimeSerieConfigByName(name);
+		this.timeSeriesConfigs.remove(tsc);
+		this.repaint();
+	}
+
+	@Override
+	public void removeTimeSeries(List<String> names) {
+		if (names != null) {
+			for (String name : names) {
+				TimeSerieConfig tsc = this.getTimeSerieConfigByName(name);
+				this.timeSeriesConfigs.remove(tsc);
+			}
+			this.repaint();
+		}
 	}
 }

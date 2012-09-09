@@ -14,7 +14,7 @@ public abstract class NewTimeSerieDialogPanels {
 	
 	Border rightBorder = null;
 	Border wrongBorder = BorderFactory
-			.createLineBorder(NewTimeSerieDialogsConfig.WRONG_FIELD_VALUE_COLOR);
+			.createLineBorder(NewTimeSerieDialogConfig.WRONG_FIELD_VALUE_COLOR);
 
 	public JPanel getLabelPanel() {
 		return this.labelPanel;

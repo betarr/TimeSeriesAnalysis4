@@ -36,7 +36,7 @@ public class ChooseTypePanel extends NewTimeSerieDialogPanels {
 		this.setMarginToPanel(contentPanel, this.spaceBetweenButtons);
 		contentPanel.setLayout(new GridLayout(1, 3, this.spaceBetweenButtons, this.spaceBetweenButtons));
 		
-		JButton fromFunctionButton = new JButton(NewTimeSerieDialogsConfig.FROM_FUNCTION_BUTTON_LABEL);
+		JButton fromFunctionButton = new JButton(NewTimeSerieDialogConfig.FROM_FUNCTION_BUTTON_LABEL);
 		fromFunctionButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
@@ -45,7 +45,7 @@ public class ChooseTypePanel extends NewTimeSerieDialogPanels {
 		});
 		contentPanel.add(fromFunctionButton);
 		
-		JButton fromExistingButton = new JButton(NewTimeSerieDialogsConfig.FROM_EXISTING_BUTTON_LABEL);
+		JButton fromExistingButton = new JButton(NewTimeSerieDialogConfig.FROM_EXISTING_BUTTON_LABEL);
 		fromExistingButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -55,7 +55,7 @@ public class ChooseTypePanel extends NewTimeSerieDialogPanels {
 		});
 		contentPanel.add(fromExistingButton);
 		
-		JButton fromRandomButton = new JButton(NewTimeSerieDialogsConfig.FROM_RANDOM_BUTTON_LABEL);
+		JButton fromRandomButton = new JButton(NewTimeSerieDialogConfig.FROM_RANDOM_BUTTON_LABEL);
 		fromRandomButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -64,7 +64,7 @@ public class ChooseTypePanel extends NewTimeSerieDialogPanels {
 		});
 		contentPanel.add(fromRandomButton);
 		
-		JButton fromFileButton = new JButton(NewTimeSerieDialogsConfig.FROM_FILE_BUTTON_LABEL);
+		JButton fromFileButton = new JButton(NewTimeSerieDialogConfig.FROM_FILE_BUTTON_LABEL);
 		fromFileButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {

@@ -33,7 +33,7 @@ public class FromFilePanel extends NewTimeSerieDialogPanels {
 	
 	private JPanel timeSerieColorPanel;
 	private JButton timeSerieColorButton;
-	private Color timeSerieColor = NewTimeSerieDialogsConfig.TIME_SERIE_DEFAULT_COLOR;
+	private Color timeSerieColor = NewTimeSerieDialogConfig.TIME_SERIE_DEFAULT_COLOR;
 
 	public FromFilePanel(NewTimeSerieDialog parent) {
 		this.parent = parent;
@@ -45,7 +45,7 @@ public class FromFilePanel extends NewTimeSerieDialogPanels {
 	private JPanel buildLabelPanel() {
 		JPanel labelPanel = new JPanel();
 		labelPanel.setLayout(new FlowLayout());
-		labelPanel.add(new JLabel(NewTimeSerieDialogsConfig.FROM_FILE_LABEL));
+		labelPanel.add(new JLabel(NewTimeSerieDialogConfig.FROM_FILE_LABEL));
 		return labelPanel;
 	}
 
@@ -59,21 +59,21 @@ public class FromFilePanel extends NewTimeSerieDialogPanels {
 				this.spaceBetweenFields));
 
 		contentPanel1
-				.add(new JLabel(NewTimeSerieDialogsConfig.FILE_NAME_LABEL));
+				.add(new JLabel(NewTimeSerieDialogConfig.FILE_NAME_LABEL));
 		this.timeSerieNameTextField = new JTextField();
 		contentPanel1.add(this.timeSerieNameTextField);
 		
 		contentPanel1.add(new JLabel(
-				NewTimeSerieDialogsConfig.FILE_COLOR_LABEL));
+				NewTimeSerieDialogConfig.FILE_COLOR_LABEL));
 		this.timeSerieColorPanel = new JPanel();
-		this.timeSerieColorPanel.setBackground(NewTimeSerieDialogsConfig.TIME_SERIE_DEFAULT_COLOR);
-		this.timeSerieColorButton = new JButton(NewTimeSerieDialogsConfig.COLOR_CHOOSER_BUTTON_LABEL);
+		this.timeSerieColorPanel.setBackground(NewTimeSerieDialogConfig.TIME_SERIE_DEFAULT_COLOR);
+		this.timeSerieColorButton = new JButton(NewTimeSerieDialogConfig.COLOR_CHOOSER_BUTTON_LABEL);
 		this.timeSerieColorButton.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				Color color = JColorChooser.showDialog(contentPanel1,
-						NewTimeSerieDialogsConfig.COLOR_CHOOSER_DIALOG_LABEL,
-						NewTimeSerieDialogsConfig.TIME_SERIE_DEFAULT_COLOR);
+						NewTimeSerieDialogConfig.COLOR_CHOOSER_DIALOG_LABEL,
+						NewTimeSerieDialogConfig.TIME_SERIE_DEFAULT_COLOR);
 				if (color != null) {
 					timeSerieColorPanel.setBackground(color);
 					timeSerieColor = color;
@@ -86,13 +86,13 @@ public class FromFilePanel extends NewTimeSerieDialogPanels {
 		contentPanel1.add(colorChoosePanel);
 
 		contentPanel1.add(new JLabel(
-				NewTimeSerieDialogsConfig.FILE_FILE_NAME_LABEL));
+				NewTimeSerieDialogConfig.FILE_FILE_NAME_LABEL));
 		this.fileNameTextField = new JTextField();
 		this.fileNameTextField.setEditable(false);
 		contentPanel1.add(this.fileNameTextField);
 		
 		contentPanel1.add(new JLabel(
-				NewTimeSerieDialogsConfig.FILE_FILE_PATH_LABEL));
+				NewTimeSerieDialogConfig.FILE_FILE_PATH_LABEL));
 		this.filePathTextField = new JTextField();
 		this.filePathTextField.setEditable(false);
 		contentPanel1.add(this.filePathTextField);
@@ -101,7 +101,7 @@ public class FromFilePanel extends NewTimeSerieDialogPanels {
 
 		JPanel contentPanel2 = new JPanel();
 		JButton chooseFileButton = new JButton(
-				NewTimeSerieDialogsConfig.FILE_CHOOSE_FILE_LABEL);
+				NewTimeSerieDialogConfig.FILE_CHOOSE_FILE_LABEL);
 		chooseFileButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
