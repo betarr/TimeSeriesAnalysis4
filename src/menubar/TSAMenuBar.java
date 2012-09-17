@@ -42,6 +42,16 @@ public class TSAMenuBar extends JMenuBar {
 					}
 			
 		}));
+		programMenu.add(this.buildJMenuItem(MenuBarConfig.JMENUITEM_TIMESERIES_INFO,
+				KeyStroke.getKeyStroke(KeyEvent.VK_I, Event.CTRL_MASK),
+				new ActionListener() {
+
+					@Override
+					public void actionPerformed(ActionEvent arg0) {
+						appController.showTimeSeriesInfoDialog(parent);
+					}
+			
+		}));
 		programMenu.add(this.buildJMenuItem(MenuBarConfig.JMENUITEM_TIMESERIES_DELETE,
 				KeyStroke.getKeyStroke(KeyEvent.VK_W, Event.CTRL_MASK),
 				new ActionListener() {
