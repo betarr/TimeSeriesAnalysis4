@@ -1,7 +1,6 @@
 package dialogs.newtimeserie;
 
 import java.awt.BorderLayout;
-import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
 
@@ -64,11 +63,18 @@ public class NewTimeSerieDialog extends JDialog {
 		this.swapToPanel(this.chooseTypePanel);
 	}
 	
-	public void swatToFromFunctionPanel() {
+	public void swapToFromFunctionPanel() {
 		if (this.fromFunctionPanel == null) {
 			this.fromFunctionPanel = new FromFunctionPanel(this);
 		}
 		this.swapToPanel(this.fromFunctionPanel);
+	}
+	
+	public void swapToFromExistingPanel() {
+		if (this.fromExistingPanel == null) {
+			this.fromExistingPanel = new FromExistingPanel(this);
+		}
+		this.swapToPanel(this.fromExistingPanel);
 	}
 	
 	public void swapToFromRandomPanel() {

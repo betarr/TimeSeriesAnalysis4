@@ -27,7 +27,7 @@ public class ChooseTypePanel extends NewTimeSerieDialogPanels {
 		JPanel labelPanel = new JPanel();
 		this.setMarginToPanel(labelPanel, this.spaceBetweenButtons);
 		labelPanel.setLayout(new FlowLayout());
-		labelPanel.add(new JLabel("choose.... "));
+		labelPanel.add(new JLabel(NewTimeSerieDialogConfig.INSTRUCTION));
 		return labelPanel;
 	}
 
@@ -40,7 +40,7 @@ public class ChooseTypePanel extends NewTimeSerieDialogPanels {
 		fromFunctionButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				parent.swatToFromFunctionPanel();
+				parent.swapToFromFunctionPanel();
 			}
 		});
 		contentPanel.add(fromFunctionButton);
@@ -49,8 +49,7 @@ public class ChooseTypePanel extends NewTimeSerieDialogPanels {
 		fromExistingButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO
-				System.out.println("From Existing button pressed");
+				parent.swapToFromExistingPanel();
 			}
 		});
 		contentPanel.add(fromExistingButton);

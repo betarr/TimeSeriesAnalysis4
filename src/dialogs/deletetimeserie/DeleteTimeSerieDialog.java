@@ -14,6 +14,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import controllers.ControllerService;
+import dialogs.DialogsConfig;
 
 public class DeleteTimeSerieDialog extends JDialog {
 	private static final long serialVersionUID = 1L;
@@ -65,7 +66,7 @@ public class DeleteTimeSerieDialog extends JDialog {
 		JPanel controlPanel = new JPanel();
 		controlPanel.setLayout(new FlowLayout(FlowLayout.RIGHT));
 		controlPanel.setBorder(new EmptyBorder(0, 0, 0, 7));
-		this.confirmButton = new JButton(DeleteTimeSerieDialogConfig.DIALOG_CONFIRM_LABEL);
+		this.confirmButton = new JButton(DialogsConfig.BUTTON_LABEL_FINISH);
 		this.confirmButton.addActionListener(new ActionListener() {
 
 			@Override
@@ -75,7 +76,7 @@ public class DeleteTimeSerieDialog extends JDialog {
 			}
 			
 		});
-		this.cancelButton = new JButton(DeleteTimeSerieDialogConfig.DIALOG_CANCEL_LABEL);
+		this.cancelButton = new JButton(DialogsConfig.BUTTON_LABEL_CANCEL);
 		this.cancelButton.addActionListener(new ActionListener() {
 
 			@Override

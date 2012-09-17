@@ -10,42 +10,46 @@ public class NewTimeSerieDialogConfig {
 	public static final Color TIME_SERIE_DEFAULT_COLOR = Color.BLACK;
 	
 	// Strings
-	public static final String DIALOG_LABEL = "New Time Serie";
-	public static final String INSTRUCTION = "Choose ...";
+	public static final String DIALOG_LABEL = "Novy casovy rad";
+	public static final String INSTRUCTION = "Vyberte sposob vytvorenia noveho casoveho radu.";
 	
-	public static final String FROM_FUNCTION_BUTTON_LABEL = "From Function";
-	public static final String FROM_EXISTING_BUTTON_LABEL = "From Existing";
-	public static final String FROM_RANDOM_BUTTON_LABEL = "Random";
-	public static final String FROM_FILE_BUTTON_LABEL = "From File";
+	public static final String FROM_FUNCTION_BUTTON_LABEL = "Z funkcie";
+	public static final String FROM_EXISTING_BUTTON_LABEL = "Z existujuceho";
+	public static final String FROM_RANDOM_BUTTON_LABEL = "Nahodny";
+	public static final String FROM_FILE_BUTTON_LABEL = "Zo suboru";
 	
-	public static final String COLOR_CHOOSER_BUTTON_LABEL = "Choose";
-	public static final String COLOR_CHOOSER_DIALOG_LABEL = "Choose time serie color";
+	public static final String COLOR_CHOOSER_BUTTON_LABEL = "Vybrat";
+	public static final String COLOR_CHOOSER_DIALOG_LABEL = "Vybrat farbu casoveho radu";
 	
-	public static final String FROM_RANDOM_LABEL = "Create random time serie";
-	public static final String RANDOM_NAME_LABEL = "Time serie name";
-	public static final String RANDOM_COLOR_LABEL = "Time serie color";
-	public static final String RANDOM_START_X_LABEL = "Start X";
-	public static final String RANDOM_END_X_LABEL = "End X";
-	public static final String RANDOM_MIN_Y_LABEL = "Min Y";
-	public static final String RANDOM_MAX_Y_LABEL = "Max Y";
-	public static final String RANDOM_ITERATION_STEP_LABEL = "Iteration step";
+	public static final String FROM_RANDOM_LABEL = "Vytvorit nahodny casovy rad.";
+	public static final String RANDOM_NAME_LABEL = "Nazov casoveho radu";
+	public static final String RANDOM_COLOR_LABEL = "Farba casoveho radu";
+	public static final String RANDOM_START_X_LABEL = "Zaciatocne X";
+	public static final String RANDOM_END_X_LABEL = "Koncove X";
+	public static final String RANDOM_MIN_Y_LABEL = "Minimalne Y";
+	public static final String RANDOM_MAX_Y_LABEL = "Maximalne Y";
+	public static final String RANDOM_ITERATION_STEP_LABEL = "Velkost kroku";
 	
 	public static final String FROM_FUNCTION_LABEL = 
-		"Create time serie using predefined function";
-	public static final String FUNCTION_NAME_LABEL = "Time serie name";
-	public static final String FUNCTION_COLOR_LABEL = "Time serie color";
-	public static final String FUNCTION_FUNCTION_LABEL = "Function";
-	public static final String FUNCTION_START_X_LABEL = "Start X";
-	public static final String FUNCTION_END_X_LABEL = "End X";
-	public static final String FUNCTION_ITERATION_STEP_LABEL = "Iteration step";
-	public static final String FUNCTION_USE_NOISE_LABEL = "Use noise";
-	public static final String FUNCTION_NOISE_LABEL = "Noise";
+		"Vytvorit casovy rad z preddefinovanej funkcie.";
+	public static final String FUNCTION_NAME_LABEL = "Nazov casoveho radu";
+	public static final String FUNCTION_COLOR_LABEL = "Farba casoveho radu";
+	public static final String FUNCTION_FUNCTION_LABEL = "Funkcia";
+	public static final String FUNCTION_START_X_LABEL = "Zaciatocne X";
+	public static final String FUNCTION_END_X_LABEL = "Koncove X";
+	public static final String FUNCTION_ITERATION_STEP_LABEL = "Velkost kroku";
+	public static final String FUNCTION_USE_NOISE_LABEL = "Pouzit sum";
+	public static final String FUNCTION_NOISE_LABEL = "Velkost sumu";
+	
+	public static final String FROM_EXISTING_LABEL = "Vytvorit casovy rad z existujuceho casoveho radu.";
+	public static final String EXISTING_NAME_LABEL = "Nazov casoveho radu";
+	public static final String EXISTING_COLOR_LABEL = "Farba casoveho radu";
 	
 	public static final String FROM_FILE_LABEL = 
-		"Create time serie from file";
-	public static final String FILE_NAME_LABEL = "Time serie name";
-	public static final String FILE_COLOR_LABEL = "Time serie color";
-	public static final String FILE_FILE_NAME_LABEL = "File name";
-	public static final String FILE_FILE_PATH_LABEL = "File path";
-	public static final String FILE_CHOOSE_FILE_LABEL = "Choose file";
+		"Nacitat casovy rad zo suboru.";
+	public static final String FILE_NAME_LABEL = "Nazov casoveho radu";
+	public static final String FILE_COLOR_LABEL = "Farba casoveho radu";
+	public static final String FILE_FILE_NAME_LABEL = "Nazov suboru";
+	public static final String FILE_FILE_PATH_LABEL = "Cesta k suboru";
+	public static final String FILE_CHOOSE_FILE_LABEL = "Vybrat subor";
 }
